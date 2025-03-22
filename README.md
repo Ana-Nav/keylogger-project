@@ -14,11 +14,11 @@ Example output:
 ![Example Output](images/keylogger_output1.png)
 
 ## Installation
-1. Clone this project
+1. Clone this project:
 ```bash
 git clone https://github.com/Ana-Nav/keylogger-project
 ```
-2. Install dependencies
+2. Install dependencies:
 ```bash
 cd keylogger-project
 ```
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-Fill out the sender and recipient email addresses, along with the password for the sender address. You will need to genereate an App Password for the sender gmail adress:
+Fill out the sender and recipient email addresses, along with the password for the sender address. You will need to generate an App Password for the sender gmail adress:
 
 1. Enable 2-Step Verification:
 
